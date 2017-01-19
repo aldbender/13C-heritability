@@ -1,0 +1,2 @@
+"itag" "cor.trait" "slope" "pvalue" "bh"
+"86094" "Solyc03g044090.2.1" "pct_iso" -6.489525486 4.79e-09 0.00155801456

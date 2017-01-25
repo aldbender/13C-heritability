@@ -4,7 +4,7 @@ library(ggplot2)
 #IMPORTANT: The goal of this script is to generate a heatmap of the rho values from the previous script in which the traits are ordered in the same order as the hierarchical clustering dendrogram. To do that, you will have to copy and paste the traits from the dendrogram into excel and assign them an order number. Once they have an order number, each trait pair, Trait1 and Trait2, for which there is a rho value, must have the associated order attached to it. Please look at the file that is read in below to get a feel for what I mean by this. You will have to use the merge() function to merge the orders for each trait pair correctly
 
 #Read in data
-data <- read.table("/ind.waxGHtraits.RVAL.txt", header=TRUE)
+data <- read.table("/ind.waxGHtraits.ORD.RVAL.txt", header=TRUE)
 names(data)
 
 #Make a heat map

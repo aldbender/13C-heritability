@@ -1,6 +1,6 @@
 library(ggplot2)
 
-data <- read.delim("/5.master_qtl_plot.txt", header=TRUE)
+data <- read.delim("/master_qtl_plot.txt", header=TRUE)
 
 data$trait <- factor(data$trait, levels=c("mindex","pct_iso","pct_anteiso","nalk_ACL","iso_ACL","anteiso_ACL","nalk_CPI","iso_CPI","anteiso_CPI","eps13C_n.C31","eps13C_i.C31","eps13C_n.C33","eps13C_i.C33","n31.i31","n33.i33"))
 

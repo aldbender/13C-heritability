@@ -11,7 +11,7 @@ head(data)
 names(data)
 
 #Select just those columns of traits that you would like to create a hierarchical clustering dengrogram for
-n.data <- data[,c(2:239)]
+n.data <- data[,c(2:238)]
 
 #Rename the rows with the il number
 row.names(n.data) <- data$il

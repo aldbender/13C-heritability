@@ -11,7 +11,7 @@ head(data)
 names(data)
 
 #Select just those columns of traits that you would like to create a hierarchical clustering dengrogram for
-n.data <- data[,c(2:17)]
+n.data <- data[,c(2:16)]
 
 #Rename the rows with the il number
 row.names(n.data) <- data$il
@@ -21,7 +21,6 @@ mn.data <- as.matrix(n.data)
 
 #Use the rcorr function to calculate an r (or in this case Spearman's rho, which is always safer but more conservative)
 a <- rcorr(mn.data, type="spearman")
-#a <- rcorr(mn.data, type="pearson")
 
 #You will see that you have created a matrix table of rho, p values, and other info
 a

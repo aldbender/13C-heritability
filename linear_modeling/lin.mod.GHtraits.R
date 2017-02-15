@@ -3,7 +3,7 @@ library(ggplot2)
 library(lmerTest)
 
 #data <- read.table("GH_IL_data_summary.txt", header=TRUE)
-data <- read.delim("~/GoogleDrive/Grad_school/Research/Tomatoes/Paper_drafts/d13C_CSIA/Figures/3.QTL analysis/Linear modeling/GH.wax.summarytraits.txt")
+data <- read.delim("~SuppDataset4_SummaryTraits.txt")
 names(data)
 summary(data)
 

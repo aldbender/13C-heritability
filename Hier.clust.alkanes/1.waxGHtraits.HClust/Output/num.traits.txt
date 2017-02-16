@@ -1,0 +1,1 @@
+trait	num.traitD_nC31	01.D_nC31D_nC33	02.D_nC33D_iC31	03.D_iC31D_iC33	04.D_iC33anteiso_ACL	05.anteiso_ACLiso_ACL	06.iso_ACLnalk_ACL	07.nalk_ACLnalk_CPI	08.nalk_CPIiso_CPI	09.iso_CPIpct_iso	10.pct_ison31.i31	11.n31.i31n33.i33	12.n33.i33anteiso_CPI	13.anteiso_CPImindex	14.mindexpct_anteiso	15.pct_anteiso

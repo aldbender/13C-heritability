@@ -15,5 +15,8 @@ t + geom_tile() + scale_fill_gradient2(low="red", mid="black", high="yellow")  +
 
 #NOTE: If you would like to use different colors, check out colorbrewer.org and copy and paste in the hex code colors
 
+# Below: plot without anything on the edges and no legend!
+t + geom_tile() + scale_fill_gradient2(low="firebrick", mid="white", high="forestgreen")  +theme_bw() + theme(axis.title.x=element_blank(), axis.text.x=element_blank(), axis.ticks.x=element_blank(), axis.title.y=element_blank(), axis.text.y=element_blank(), axis.ticks.y=element_blank()) + coord_fixed() + guides(fill=FALSE)
+
 
 

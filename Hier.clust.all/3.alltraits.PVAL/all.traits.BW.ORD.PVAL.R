@@ -19,4 +19,8 @@ t + geom_tile() + scale_fill_manual(values=c("black", "white")) + theme_bw() + t
 
 #NOTE: If you would like to use different colors, check out colorbrewer.org and copy and paste in the hex code colors
 
+# Without extra stuff
+t + geom_tile() + scale_fill_manual(values=c("black", "white")) + theme_bw()  +coord_fixed() + theme(axis.title.x=element_blank(), axis.text.x=element_blank(), axis.ticks.x=element_blank(), axis.title.y=element_blank(), axis.text.y=element_blank(), axis.ticks.y=element_blank()) +guides(fill=FALSE)
+
+
 

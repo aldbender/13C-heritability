@@ -690,7 +690,7 @@ qqnorm(asin_trait)
 qqline(asin_trait)
 
 # Formally test deviation from normal distribution
-shapiro.test(data$eps13C_n.C33)
+shapiro.test(abs(data$eps13C_n.C33))
 shapiro.test(sq_trait)
 shapiro.test(log_trait)
 shapiro.test(rec_trait)
@@ -698,7 +698,7 @@ shapiro.test(asin_trait)
 
 # No transformation
 # Model our trait using a mixed effect linear model
-D_nC33_model <- lmer(data$eps13C_n.C33 ~ il + (1|Plot), data=data)
+eps13C_n.C33_model <- lmer(abs(data$eps13C_n.C33) ~ il + (1|Plot), data=data)
 
 modelcheck(eps13C_n.C33_model)
 

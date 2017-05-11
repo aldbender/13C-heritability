@@ -501,19 +501,22 @@ h2.trans <- lmer(asin_trait ~ (1|il) + (1|Plot), data=data) #Transformed
 h2.trans
 h2.model <- lmer(data$iso_ACL ~ (1|il) + (1|Plot), data=data) #Not transformed
 h2.model
+
+
 # --------
-# Next trait: D_iC31
-qplot(D_iC31,data=data,geom="histogram")
+
+# Next trait: eps_iC31
+qplot(eps13C_i.C31,data=data,geom="histogram")
 
 # The dataset is skewed; look at a qq plot
-qqnorm(data$D_iC31)
-qqline(data$D_iC31)
+qqnorm(data$eps13C_i.C31)
+qqline(data$eps13C_i.C31)
 
 # There is some deviation; let's try some transformations
-sq_trait <- sqrt(data$D_iC31)
-log_trait <- log(data$D_iC31)
-rec_trait <- 1/(data$D_iC31)
-asin_trait <- asin(data$D_iC31/100)
+sq_trait <- sqrt(abs(data$eps13C_i.C31))
+log_trait <- log(abs(data$eps13C_i.C31)+1)
+rec_trait <- 1/(abs(data$eps13C_i.C31))
+asin_trait <- asin(abs(data$eps13C_i.C31)/100)
 
 # QQ plots
 qqnorm(sq_trait)
@@ -529,7 +532,7 @@ qqnorm(asin_trait)
 qqline(asin_trait)
 
 # Formally test deviation from normal distribution
-shapiro.test(data$D_iC31)
+shapiro.test(data$eps13C_i.C31)
 shapiro.test(sq_trait)
 shapiro.test(log_trait)
 shapiro.test(rec_trait)
@@ -537,36 +540,36 @@ shapiro.test(asin_trait)
 
 # Arcsine transformation
 # Model our trait using a mixed effect linear model
-D_iC31_model <- lmer(asin_trait ~ il + (1|Plot), data=data)
+eps13C_i.C31_model <- lmer(asin_trait ~ il + (1|Plot), data=data)
 
 modelcheck(eps13C_i.C31_model)
 
 # Everything looks good! Now, find the p values for the ILs deviating from the cvM82 parent
-summary(D_iC31_model)
+summary(eps13C_i.C31_model)
 
 # There appear to be many significant ILs. Write out data.
-summary <- summary(D_iC31_model)$coef
-write.table(summary, file="D_iC31_model_summary.txt")
+summary <- summary(eps13C_i.C31_model)$coef
+write.table(summary, file="eps13C_i.C31_model_summary.txt")
 
 # Heritability values
 h2.trans <- lmer(asin_trait ~ (1|il) + (1|Plot), data=data) #Transformed
 h2.trans
-h2.model <- lmer(data$D_iC31 ~ (1|il) + (1|Plot), data=data) #Not transformed
+h2.model <- lmer(data$eps13C_i.C31 ~ (1|il) + (1|Plot), data=data) #Not transformed
 h2.model
-
 # --------
-# Next trait: D_nC31
-qplot(D_nC31,data=data,geom="histogram")
+
+# Next trait: eps13C_n.C31
+qplot(eps13C_n.C31,data=data,geom="histogram")
 
 # The dataset is skewed; look at a qq plot
-qqnorm(data$D_nC31)
-qqline(data$D_nC31)
+qqnorm(data$eps13C_n.C31)
+qqline(data$eps13C_n.C31)
 
 # There is some deviation; let's try some transformations
-sq_trait <- sqrt(data$D_nC31)
-log_trait <- log(data$D_nC31+1)
-rec_trait <- 1/(data$D_nC31)
-asin_trait <- asin(data$D_nC31/100)
+sq_trait <- sqrt(abs(data$eps13C_n.C31))
+log_trait <- log(abs(data$eps13C_n.C31)+1)
+rec_trait <- 1/(abs(data$eps13C_n.C31))
+asin_trait <- asin(abs(data$eps13C_n.C31)/100)
 
 # QQ plots
 qqnorm(sq_trait)
@@ -582,7 +585,7 @@ qqnorm(asin_trait)
 qqline(asin_trait)
 
 # Formally test deviation from normal distribution
-shapiro.test(data$D_nC31)
+shapiro.test(data$eps13C_n.C31)
 shapiro.test(sq_trait)
 shapiro.test(log_trait)
 shapiro.test(rec_trait)
@@ -590,36 +593,36 @@ shapiro.test(asin_trait)
 
 # Arcsine transformation
 # Model our trait using a mixed effect linear model
-D_nC31_model <- lmer(asin_trait ~ il + (1|Plot), data=data)
+eps13C_n.C31_model <- lmer(asin_trait ~ il + (1|Plot), data=data)
 
-modelcheck(D_nC31_model)
+modelcheck(eps13C_n.C31_model)
 
 # Everything looks good! Now, find the p values for the ILs deviating from the cvM82 parent
-summary(D_nC31_model)
+summary(eps13C_n.C31_model)
 
 # There appear to be many significant ILs. Write out data.
-summary <- summary(D_nC31_model)$coef
-write.table(summary, file="D_nC31_model_summary.txt")
+summary <- summary(eps13C_n.C31_model)$coef
+write.table(summary, file="eps13C_n.C31_model_summary.txt")
 
 # Heritability values
 h2.trans <- lmer(asin_trait ~ (1|il) + (1|Plot), data=data) #Transformed
 h2.trans
-h2.model <- lmer(data$D_nC31 ~ (1|il) + (1|Plot), data=data) #Not transformed
+h2.model <- lmer(data$eps13C_n.C31 ~ (1|il) + (1|Plot), data=data) #Not transformed
 h2.model
 # -------
 
-# Next trait: D_iC33
+# Next trait: eps13C_i.C33
 qplot(D_iC33,data=data,geom="histogram")
 
 # The dataset is skewed; look at a qq plot
-qqnorm(data$D_iC33)
-qqline(data$D_iC33)
+qqnorm(data$eps13C_i.C33)
+qqline(data$eps13C_i.C33)
 
 # There is some deviation; let's try some transformations
-sq_trait <- sqrt(data$D_iC33)
-log_trait <- log(data$D_iC33+1)
-rec_trait <- 1/(data$D_iC33)
-asin_trait <- asin(data$D_iC33/100)
+sq_trait <- sqrt(abs(data$eps13C_i.C33))
+log_trait <- log(abs(data$eps13C_i.C33)+1)
+rec_trait <- 1/(abs(data$eps13C_i.C33))
+asin_trait <- asin(abs(data$eps13C_i.C33)/100)
 
 # QQ plots
 qqnorm(sq_trait)
@@ -635,7 +638,7 @@ qqnorm(asin_trait)
 qqline(asin_trait)
 
 # Formally test deviation from normal distribution
-shapiro.test(data$D_iC33)
+shapiro.test(data$eps13C_i.C33)
 shapiro.test(sq_trait)
 shapiro.test(log_trait)
 shapiro.test(rec_trait)
@@ -643,35 +646,35 @@ shapiro.test(asin_trait)
 
 # sqrt transformation
 # Model our trait using a mixed effect linear model
-D_iC33_model <- lmer(sq_trait ~ il + (1|Plot), data=data)
+eps13C_i.C33_model <- lmer(sq_trait ~ il + (1|Plot), data=data)
 
-modelcheck(D_iC33_model)
+modelcheck(eps13C_i.C33_model)
 
 # Everything looks good! Now, find the p values for the ILs deviating from the cvM82 parent
-summary(D_iC33_model)
+summary(eps13C_i.C33_model)
 
 # There appear to be many significant ILs. Write out data.
-summary <- summary(D_iC33_model)$coef
+summary <- summary(eps13C_i.C33_model)$coef
 write.table(summary, file="D_iC33_model_summary.txt")
 
 h2.trans <- lmer(sq_trait ~ (1|il) + (1|Plot), data=data) #Transformed
 h2.trans
-h2.model <- lmer(data$D_iC33 ~ (1|il) + (1|Plot), data=data) #Not transformed
+h2.model <- lmer(data$eps13C_i.C33 ~ (1|il) + (1|Plot), data=data) #Not transformed
 h2.model
 # -------
 
-# Next trait: D_nC33
+# Next trait: eps13C_n.C33
 qplot(D_nC33,data=data,geom="histogram")
 
 # The dataset is skewed; look at a qq plot
-qqnorm(data$D_nC33)
-qqline(data$D_nC33)
+qqnorm(data$eps13C_n.C33)
+qqline(data$eps13C_n.C33)
 
 # There is some deviation; let's try some transformations
-sq_trait <- sqrt(data$D_nC33)
-log_trait <- log(data$D_nC33+1)
-rec_trait <- 1/(data$D_nC33)
-asin_trait <- asin(data$D_nC33/100)
+sq_trait <- sqrt(abs(data$eps13C_n.C33))
+log_trait <- log((data$eps13C_n.C33)+1)
+rec_trait <- 1/(abs(data$eps13C_n.C33))
+asin_trait <- asin((data$eps13C_n.C33)/100)
 
 # QQ plots
 qqnorm(sq_trait)
@@ -687,7 +690,7 @@ qqnorm(asin_trait)
 qqline(asin_trait)
 
 # Formally test deviation from normal distribution
-shapiro.test(data$D_nC33)
+shapiro.test(data$eps13C_n.C33)
 shapiro.test(sq_trait)
 shapiro.test(log_trait)
 shapiro.test(rec_trait)
@@ -695,19 +698,19 @@ shapiro.test(asin_trait)
 
 # No transformation
 # Model our trait using a mixed effect linear model
-D_nC33_model <- lmer(data$D_nC33 ~ il + (1|Plot), data=data)
+D_nC33_model <- lmer(data$eps13C_n.C33 ~ il + (1|Plot), data=data)
 
 modelcheck(eps13C_n.C33_model)
 
 # Everything looks good! Now, find the p values for the ILs deviating from the cvM82 parent
-summary(D_nC33_model)
+summary(eps13C_n.C33_model)
 
 # There appear to be many significant ILs. Write out data.
-summary <- summary(D_nC33_model)$coef
-write.table(summary, file="D_nC33_model_summary.txt")
+summary <- summary(eps13C_n.C33_model)$coef
+write.table(summary, file="eps13C_n.C33_model_summary.txt")
 
 # Heritability values
-h2.model <- lmer(data$D_nC33 ~ (1|il) + (1|Plot), data=data) #Not transformed
+h2.model <- lmer(data$eps13C_n.C33 ~ (1|il) + (1|Plot), data=data) #Not transformed
 h2.model
 # -------
 
